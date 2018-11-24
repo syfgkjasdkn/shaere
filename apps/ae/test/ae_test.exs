@@ -85,6 +85,7 @@ defmodule AeTest do
     end
   end
 
+  # TODO cleanup
   describe "signed tx" do
     test "against python sdk" do
       # https://github.com/aeternity/aepp-sdk-python
