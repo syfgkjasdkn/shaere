@@ -27,6 +27,18 @@ defmodule Web.Plugs.TGBotTest do
 
     assert conn.status == 200
 
-    assert_receive {:message, telegram_id: 123, text: "TODO"}
+    assert_receive {:message,
+                    telegram_id: 123,
+                    text: """
+                    /shaere <amount> <address> to share some AE
+
+                    /key to get your private key
+
+                    /address to get your address
+
+                    /balance to get your balance
+
+                    /help to get help
+                    """}
   end
 end
