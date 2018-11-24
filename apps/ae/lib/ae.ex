@@ -10,6 +10,8 @@ defmodule Ae do
   @tag_size 8
   @hash_bytes_size 32
 
+  @api_endpoint "https://sdk-testnet.aepps.com/v2"
+
   @doc """
   Generates a private/public key pair.
 
@@ -186,7 +188,12 @@ defmodule Ae do
 
   @spec _fetch_absolute_ttl(pos_integer) :: pos_integer
   defp _fetch_absolute_ttl(relative_ttl) do
-    %{"key_block" => %{"height" => height}} = fetch_latest_block()
+    height =
+      case fetch_latest_block() do
+        %{"key_block" => %{"height" => height}} -> height
+        %{"micro_block" => %{"height" => height}} -> height
+      end
+
     height + relative_ttl
   end
 
@@ -203,7 +210,7 @@ defmodule Ae do
   """
   @spec fetch_account_info(public_key | secret | String.t()) :: map | nil
   def fetch_account_info("ak_" <> _account = account) do
-    case :httpc.request('https://sdk-edgenet.aepps.com/v2/accounts/#{account}') do
+    case :httpc.request('#{@api_endpoint}/accounts/#{account}') do
       {:ok, {{_version, 200, _description}, _resp_headers, resp_body}} ->
         Jason.decode!(resp_body)
 
@@ -247,7 +254,7 @@ defmodule Ae do
   @spec fetch_latest_block :: map
   def fetch_latest_block do
     {:ok, {{_version, 200, _description}, _resp_headers, resp_body}} =
-      :httpc.request('https://sdk-edgenet.aepps.com/v2/blocks/top')
+      :httpc.request('#{@api_endpoint}/blocks/top')
 
     Jason.decode!(resp_body)
   end
@@ -277,7 +284,7 @@ defmodule Ae do
   """
   @spec fetch_tx_info(String.t()) :: map | nil
   def fetch_tx_info("th_" <> _ = th) do
-    case :httpc.request('https://sdk-edgenet.aepps.com/v2/transactions/#{th}') do
+    case :httpc.request('#{@api_endpoint}/transactions/#{th}') do
       {:ok, {{_version, 200, _description}, _resp_headers, resp_body}} ->
         Jason.decode!(resp_body)
 
@@ -296,7 +303,7 @@ defmodule Ae do
     case :httpc.request(
            :post,
            {
-             'https://sdk-edgenet.aepps.com/v2/transactions',
+             '#{@api_endpoint}/transactions',
              [],
              'application/json',
              # TODO
@@ -314,6 +321,9 @@ defmodule Ae do
   end
 
   # https://github.com/aeternity/protocol/blob/master/serializations.md#the-id-type
+  @spec id_type_to_tag(:account | :name | :commitment | :oracle | :contract | :channel) :: 1..6
+  defp id_type_to_tag(type)
+
   [
     account: 1,
     name: 2,
