@@ -4,11 +4,31 @@ defmodule Ae do
   @type public_key :: <<_::256>>
   @type secret :: <<_::512>>
 
+  @doc """
+  Generates a private/public key pair.
+
+  Example:
+      
+      iex> %{public: <<pubkey::32-bytes>>, secret: <<_privkey::64-bytes>>} = keypair()
+      iex> byte_size(pubkey) # wtf
+      32
+
+  """
   @spec keypair :: %{public: public_key, secret: secret}
   def keypair do
     :enacl.sign_keypair()
   end
 
+  @doc """
+  Computes a public key from a private key.
+
+  Example:
+      
+      iex> %{public: <<pubkey::32-bytes>>, secret: <<privkey::64-bytes>>} = keypair()
+      iex> pubkey == public_key(privkey)
+      true
+
+  """
   @spec public_key(secret) :: public_key
   def public_key(<<secret::64-bytes>>) do
     :enacl.crypto_sign_ed25519_sk_to_pk(secret)
@@ -19,6 +39,20 @@ defmodule Ae do
     :enacl.sign_detached(message, secret)
   end
 
+  @doc """
+  Represents a public or a private key as an aeternity account address.
+
+  Example:
+
+      iex> %{secret: <<privkey::64-bytes>>} = keypair()
+      iex> match?("ak_" <> _rest, address(privkey))
+      true
+
+      iex> %{public: <<pubkey::32-bytes>>} = keypair()
+      iex> match?("ak_" <> _rest, address(pubkey))
+      true
+
+  """
   @spec address(public_key | secret) :: String.t()
   def address(<<pubkey::32-bytes>>) do
     encode58c("ak", pubkey)

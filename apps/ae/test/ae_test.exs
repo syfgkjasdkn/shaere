@@ -1,6 +1,6 @@
 defmodule AeTest do
   use ExUnit.Case
-  # doctest Ae
+  doctest Ae, import: true
 
   @privkey Base.decode64!(
              "qhNlWAQvuPUshZCluV1R55yDCL11FHw71KxpsU2o//Tt2TVtM2R6/MqJTcXHg/1VDzIMwq3HagCcOkvIe9ziRQ",
