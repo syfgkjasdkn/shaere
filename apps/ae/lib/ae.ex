@@ -1,18 +1,25 @@
 defmodule Ae do
   @moduledoc File.read!("README.md")
 
+  @type public_key :: <<_::256>>
+  @type secret :: <<_::512>>
+
+  @spec keypair :: %{public: public_key, secret: secret}
   def keypair do
     :enacl.sign_keypair()
   end
 
+  @spec public_key(secret) :: public_key
   def public_key(<<secret::64-bytes>>) do
     :enacl.crypto_sign_ed25519_sk_to_pk(secret)
   end
 
+  @spec sign(message :: binary, secret) :: signature :: binary
   def sign(message, <<secret::64-bytes>>) when is_binary(message) do
     :enacl.sign_detached(message, secret)
   end
 
+  @spec address(public_key | secret) :: String.t()
   def address(<<pubkey::32-bytes>>) do
     encode58c("ak", pubkey)
   end
