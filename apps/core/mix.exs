@@ -31,7 +31,8 @@ defmodule Core.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:ae, in_umbrella: true}
+      {:ae, in_umbrella: true},
+      {:rexbug, "~> 1.0"}
     ]
   end
 end
