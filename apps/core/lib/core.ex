@@ -1,17 +1,11 @@
 defmodule Core do
   @moduledoc File.read!("README.md")
 
-  # TODO @adapter
+  @adapter Application.get_env(:core, :adapter) || raise("need core.adapter")
 
   @spec balance(pos_integer) :: non_neg_integer
   def balance(telegram_id) do
-    telegram_id
-    |> privkey()
-    |> Ae.fetch_account_info()
-    |> case do
-      %{"balance" => balance} -> balance
-      nil -> 0
-    end
+    @adapter.balance(telegram_id)
   end
 
   @spec privkey(pos_integer) :: Ae.secret()
@@ -26,24 +20,21 @@ defmodule Core do
     |> Ae.address()
   end
 
-  def share(from_telegram_id, "ak_" <> recipient_pubkey_base58c, amount) do
-    sender_privkey = privkey(from_telegram_id)
-    recipient_pubkey = Ae.decode58c(recipient_pubkey_base58c)
-    spend_tx = Ae.spend_tx(sender_privkey, recipient_pubkey, amount)
-    signature = Ae.sign_tx(spend_tx, sender_privkey)
-
-    signed_tx_rlp =
-      spend_tx
-      |> Ae.encode_signed_tx_to_list([signature])
-      |> ExRLP.encode()
-
-    # TODO
-    case Ae.send_tx(Ae.encode58c("tx", signed_tx_rlp)) do
-      {:ok, %{"tx_hash" => th}} -> {:ok, th}
-    end
+  # TODO spec
+  defp _shaere(<<sender_privkey::64-bytes>>, "ak_" <> _rest = recipient_address, amount) do
+    @adapter.shaere(sender_privkey, recipient_address, amount)
   end
 
-  def share(from_telegram_id, to_telegram_id, amount) do
-    share(from_telegram_id, address(to_telegram_id), amount)
+  # TODO
+  def shaere(from_telegram_id, "ak_" <> _rest = recipient_address, amount) do
+    from_telegram_id
+    |> Core.privkey()
+    |> _shaere(recipient_address, amount)
+  end
+
+  def shaere(from_telegram_id, to_telegram_id, amount) do
+    from_telegram_id
+    |> Core.privkey()
+    |> _shaere(Core.address(to_telegram_id), amount)
   end
 end
