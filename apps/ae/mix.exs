@@ -28,7 +28,8 @@ defmodule Ae.MixProject do
       # TODO
       {:enacl, github: "syfgkjasdkn/enacl"},
       # TODO remove
-      {:erl_base58, "~> 0.0.1"}
+      {:erl_base58, "~> 0.0.1"},
+      {:ex_rlp, "~> 0.3"}
     ]
   end
 end
