@@ -1,11 +1,9 @@
 defmodule Web.Router do
+  @moduledoc false
   use Web, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
-    plug :fetch_session
-    plug :fetch_flash
-    plug :protect_from_forgery
     plug :put_secure_browser_headers
   end
 
@@ -19,8 +17,9 @@ defmodule Web.Router do
     get "/", PageController, :index
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", Web do
-  #   pipe_through :api
-  # end
+  scope "/", Web.Plugs do
+    pipe_through(:api)
+
+    forward("/tgbot", TGBot)
+  end
 end
