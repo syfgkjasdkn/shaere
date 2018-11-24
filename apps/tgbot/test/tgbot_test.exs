@@ -44,11 +44,9 @@ defmodule TGBotTest do
       assert_receive {:message,
                       telegram_id: ^telegram_id,
                       text: """
-                      👍
-
                       Sent *100 Æ* from @somebody to *ak_2okXACqGyq8JMLYgj3okriUVHktecxfzzdzX7cuma4wMFUXntU*
 
-                      Tx: *th_2F1SLzAAKGYhbA52NfvX3XCVnTYjewgKeoXdFQawMKA1ScmQ2g*
+                      Tx: [th_2F1SLzAAKGYhbA52NfvX3XCVnTYjewgKeoXdFQawMKA1ScmQ2g](https://explorer.aepps.com/#/tx/th_2F1SLzAAKGYhbA52NfvX3XCVnTYjewgKeoXdFQawMKA1ScmQ2g)
                       """}
     end
 
@@ -64,11 +62,9 @@ defmodule TGBotTest do
       assert_receive {:message,
                       telegram_id: ^telegram_id,
                       text: """
-                      👍
-
                       Sent *105 Æ* from @somebody to @somebody2
 
-                      Tx: *th_2F1SLzAAKGYhbA52NfvX3XCVnTYjewgKeoXdFQawMKA1ScmQ2g*
+                      Tx: [th_2F1SLzAAKGYhbA52NfvX3XCVnTYjewgKeoXdFQawMKA1ScmQ2g](https://explorer.aepps.com/#/tx/th_2F1SLzAAKGYhbA52NfvX3XCVnTYjewgKeoXdFQawMKA1ScmQ2g)
                       """}
     end
 
@@ -164,7 +160,7 @@ defmodule TGBotTest do
       assert_receive {:message, telegram_id: ^telegram_id, text: text}
 
       assert text == """
-             Your address is *#{address}*
+             Your address is [#{address}](https://explorer.aepps.com/#/account/#{address})
              """
     end
 
@@ -186,11 +182,9 @@ defmodule TGBotTest do
       assert_receive {:message,
                       telegram_id: ^telegram_id,
                       text: """
-                      👍
-
                       Sent *123 Æ* to *ak_2okXACqGyq8JMLYgj3okriUVHktecxfzzdzX7cuma4wMFUXntU*
 
-                      Tx: *th_2F1SLzAAKGYhbA52NfvX3XCVnTYjewgKeoXdFQawMKA1ScmQ2g*
+                      Tx: [th_2F1SLzAAKGYhbA52NfvX3XCVnTYjewgKeoXdFQawMKA1ScmQ2g](https://explorer.aepps.com/#/tx/th_2F1SLzAAKGYhbA52NfvX3XCVnTYjewgKeoXdFQawMKA1ScmQ2g)
                       """}
     end
 
@@ -213,7 +207,7 @@ defmodule TGBotTest do
                         """
                         ?</b>
 
-                        Oh, nevermind, I have psychic powers. I heard them say we're soon to reach Mainnet, until then you can top up your /balance on https://edge-faucet.aepps.com/.
+                        Oh, nevermind, I have psychic powers. I heard them say we're soon to reach Mainnet, until then you can top up your /balance on https://faucet.aepps.com/.
 
                         Quiet, here comes the guard. Don't worry, I'll be around to /help you.
 

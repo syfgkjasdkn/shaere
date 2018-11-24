@@ -59,11 +59,9 @@ defmodule TGBot do
             @adapter.send_message(
               chat_id,
               """
-              👍
-
               Sent *#{amount} Æ* from @#{sender_username} to @#{receiver_username}
 
-              Tx: *#{th}*
+              Tx: [#{th}](https://explorer.aepps.com/#/tx/#{th})
               """,
               parse_mode: "Markdown"
             )
@@ -90,11 +88,9 @@ defmodule TGBot do
                 @adapter.send_message(
                   chat_id,
                   """
-                  👍
-
                   Sent *#{amount} Æ* from @#{sender_username} to *#{address}*
 
-                  Tx: *#{th}*
+                  Tx: [#{th}](https://explorer.aepps.com/#/tx/#{th})
                   """,
                   parse_mode: "Markdown"
                 )
@@ -162,11 +158,9 @@ defmodule TGBot do
                 @adapter.send_message(
                   chat_id,
                   """
-                  👍
-
                   Sent *#{amount} Æ* to *#{address}*
 
-                  Tx: *#{th}*
+                  Tx: [#{th}](https://explorer.aepps.com/#/tx/#{th})
                   """,
                   parse_mode: "Markdown"
                 )
@@ -222,7 +216,7 @@ defmodule TGBot do
     @adapter.send_message(
       chat_id,
       """
-      Your address is *#{address}*
+      Your address is [#{address}](https://explorer.aepps.com/#/account/#{address})
       """,
       parse_mode: "Markdown"
     )
@@ -243,7 +237,7 @@ defmodule TGBot do
       """
       ?</b>
 
-      Oh, nevermind, I have psychic powers. I heard them say we're soon to reach Mainnet, until then you can top up your /balance on https://edge-faucet.aepps.com/.
+      Oh, nevermind, I have psychic powers. I heard them say we're soon to reach Mainnet, until then you can top up your /balance on https://faucet.aepps.com/.
 
       Quiet, here comes the guard. Don't worry, I'll be around to /help you.
 
