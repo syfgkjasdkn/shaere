@@ -20,7 +20,7 @@ defmodule Core do
     |> Ae.address()
   end
 
-  # TODO spec
+  @spec _shaere(Ae.secret(), String.t(), pos_integer) :: {:ok, th :: String.t()} | {:error, any}
   defp _shaere(<<sender_privkey::64-bytes>>, "ak_" <> _rest = recipient_address, amount) do
     @adapter.shaere(sender_privkey, recipient_address, amount)
   end
