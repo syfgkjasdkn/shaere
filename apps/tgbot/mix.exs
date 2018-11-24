@@ -11,6 +11,7 @@ defmodule TGBot.MixProject do
       lockfile: "../../mix.lock",
       elixir: "~> 1.7",
       start_permanent: Mix.env() == :prod,
+      elixirc_paths: elixirc_paths(Mix.env()),
       deps: deps()
     ]
   end
@@ -22,11 +23,16 @@ defmodule TGBot.MixProject do
     ]
   end
 
+  # Specifies which paths to compile per environment.
+  defp elixirc_paths(:test), do: ["lib", "test/support"]
+  defp elixirc_paths(_env), do: ["lib"]
+
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
       {:nadia, "~> 0.4"},
-      {:httpoison, "~> 1.4", override: true}
+      {:httpoison, "~> 1.4", override: true},
+      {:core, in_umbrella: true}
     ]
   end
 end
