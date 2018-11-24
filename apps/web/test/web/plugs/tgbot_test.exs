@@ -38,7 +38,7 @@ defmodule Web.Plugs.TGBotTest do
 
                     /balance to get your balance
 
-                    /help to get help
+                    /help to get this message
                     """}
   end
 end
