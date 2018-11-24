@@ -3,8 +3,8 @@ defmodule TGBot.NadiaAdapter do
   @behaviour TGBot.Adapter
 
   @impl true
-  def send_message(telegram_id, text) do
-    Nadia.send_message(telegram_id, text)
+  def send_message(telegram_id, text, opts \\ []) do
+    Nadia.send_message(telegram_id, text, opts)
   end
 
   @impl true

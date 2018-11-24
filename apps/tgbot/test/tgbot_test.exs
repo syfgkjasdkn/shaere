@@ -43,8 +43,13 @@ defmodule TGBotTest do
 
       assert_receive {:message,
                       telegram_id: ^telegram_id,
-                      text:
-                        "ok, sent 100 AE from 1001 to ak_2okXACqGyq8JMLYgj3okriUVHktecxfzzdzX7cuma4wMFUXntU, th: th_2F1SLzAAKGYhbA52NfvX3XCVnTYjewgKeoXdFQawMKA1ScmQ2g"}
+                      text: """
+                      👍
+
+                      Sent 100 AE from @somebody to *ak_2okXACqGyq8JMLYgj3okriUVHktecxfzzdzX7cuma4wMFUXntU*
+
+                      Tx: *th_2F1SLzAAKGYhbA52NfvX3XCVnTYjewgKeoXdFQawMKA1ScmQ2g*
+                      """}
     end
 
     test "shaere with reply" do
@@ -58,8 +63,13 @@ defmodule TGBotTest do
 
       assert_receive {:message,
                       telegram_id: ^telegram_id,
-                      text:
-                        "ok, sent 105 AE from 1002 to 1234, th: th_2F1SLzAAKGYhbA52NfvX3XCVnTYjewgKeoXdFQawMKA1ScmQ2g"}
+                      text: """
+                      👍
+
+                      Sent 105 AE from @somebody to @somebody2
+
+                      Tx: *th_2F1SLzAAKGYhbA52NfvX3XCVnTYjewgKeoXdFQawMKA1ScmQ2g*
+                      """}
     end
 
     test "shaere help" do
@@ -77,10 +87,7 @@ defmodule TGBotTest do
                       """}
     end
 
-    test "invalid shaere" do
-      # telegram_id = 1007
-      # TODO
-    end
+    test "invalid shaere"
   end
 
   describe "private" do
@@ -99,7 +106,7 @@ defmodule TGBotTest do
 
                       /balance to get your balance
 
-                      /help to get help
+                      /help to get this message
                       """}
     end
 
@@ -115,7 +122,9 @@ defmodule TGBotTest do
       assert_receive {:message,
                       telegram_id: ^empty_telegram_id,
                       text: """
-                      Your balance is 0 AE.
+                      Your balance is *0 AE.*
+
+                      Try to keep the funds here to a minimum. Think of it like pocket change.
                       """}
 
       send_private_message(telegram_id, "/balance")
@@ -123,7 +132,9 @@ defmodule TGBotTest do
       assert_receive {:message,
                       telegram_id: ^telegram_id,
                       text: """
-                      Your balance is 1000 AE.
+                      Your balance is *1000 AE.*
+
+                      Try to keep the funds here to a minimum. Think of it like pocket change.
                       """}
     end
 
@@ -139,7 +150,7 @@ defmodule TGBotTest do
       assert_receive {:message, telegram_id: ^telegram_id, text: text}
 
       assert text == """
-             Your private key is #{privkey_base16}.
+             Your private key is *#{privkey_base16}*
              """
     end
 
@@ -153,11 +164,69 @@ defmodule TGBotTest do
       assert_receive {:message, telegram_id: ^telegram_id, text: text}
 
       assert text == """
-             Your address is #{address}.
+             Your address is *#{address}*
              """
     end
 
-    test "shaere with address"
+    test "shaere with address" do
+      telegram_id = 123_478
+
+      send_private_message(
+        telegram_id,
+        "/shaere 123 ak_2okXACqGyq8JMLYgj3okriUVHktecxfzzdzX7cuma4wMFUXntU"
+      )
+
+      assert_receive {:shaere,
+                      sender_privkey: sender_privkey,
+                      receiver: "ak_2okXACqGyq8JMLYgj3okriUVHktecxfzzdzX7cuma4wMFUXntU",
+                      amount: 123}
+
+      assert sender_privkey == Core.privkey(telegram_id)
+
+      assert_receive {:message,
+                      telegram_id: ^telegram_id,
+                      text: """
+                      👍
+
+                      Sent 123 AE to *ak_2okXACqGyq8JMLYgj3okriUVHktecxfzzdzX7cuma4wMFUXntU*
+
+                      Tx: *th_2F1SLzAAKGYhbA52NfvX3XCVnTYjewgKeoXdFQawMKA1ScmQ2g*
+                      """}
+    end
+
+    test "start" do
+      telegram_id = 18_732_645
+
+      send_private_message(telegram_id, "/start")
+
+      assert_receive {:message,
+                      telegram_id: ^telegram_id,
+                      text: [
+                        """
+                        <b>Wake up,</b> we're here. <i>Why are you shaking?</i> Are you ok? <b>Wake up.</b>
+
+                        Stand up ... there you go. You were dreaming. What's your Æternity ™ /address?
+
+                        Shhh ... Let me guess, is it <b>\
+                        """,
+                        address,
+                        """
+                        ?</b>
+
+                        Oh, nevermind, I have psychic powers. I heard them say we're soon to reach Mainnet, until then you can top up your /balance on https://edge-faucet.aepps.com/.
+
+                        Quiet, here comes the guard. Don't worry, I'll be around to /help you.
+
+                        But you better do what they say!
+
+                        And they say /shaere!
+                        """
+                      ]}
+
+      assert address == Core.address(telegram_id)
+    end
+
+    test "invalid shaere"
   end
 
   test "webhook" do
