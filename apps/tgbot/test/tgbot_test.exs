@@ -46,7 +46,7 @@ defmodule TGBotTest do
                       text: """
                       👍
 
-                      Sent 100 AE from @somebody to *ak_2okXACqGyq8JMLYgj3okriUVHktecxfzzdzX7cuma4wMFUXntU*
+                      Sent *100 Æ* from @somebody to *ak_2okXACqGyq8JMLYgj3okriUVHktecxfzzdzX7cuma4wMFUXntU*
 
                       Tx: *th_2F1SLzAAKGYhbA52NfvX3XCVnTYjewgKeoXdFQawMKA1ScmQ2g*
                       """}
@@ -66,7 +66,7 @@ defmodule TGBotTest do
                       text: """
                       👍
 
-                      Sent 105 AE from @somebody to @somebody2
+                      Sent *105 Æ* from @somebody to @somebody2
 
                       Tx: *th_2F1SLzAAKGYhbA52NfvX3XCVnTYjewgKeoXdFQawMKA1ScmQ2g*
                       """}
@@ -98,7 +98,7 @@ defmodule TGBotTest do
       assert_receive {:message,
                       telegram_id: ^telegram_id,
                       text: """
-                      /shaere <amount> <address> to share some AE
+                      /shaere <amount> <address> to share some Æ
 
                       /key to get your private key
 
@@ -122,7 +122,7 @@ defmodule TGBotTest do
       assert_receive {:message,
                       telegram_id: ^empty_telegram_id,
                       text: """
-                      Your balance is *0 AE.*
+                      Your balance is *0 Æ.*
 
                       Try to keep the funds here to a minimum. Think of it like pocket change.
                       """}
@@ -132,7 +132,7 @@ defmodule TGBotTest do
       assert_receive {:message,
                       telegram_id: ^telegram_id,
                       text: """
-                      Your balance is *1000 AE.*
+                      Your balance is *1000 Æ.*
 
                       Try to keep the funds here to a minimum. Think of it like pocket change.
                       """}
@@ -188,7 +188,7 @@ defmodule TGBotTest do
                       text: """
                       👍
 
-                      Sent 123 AE to *ak_2okXACqGyq8JMLYgj3okriUVHktecxfzzdzX7cuma4wMFUXntU*
+                      Sent *123 Æ* to *ak_2okXACqGyq8JMLYgj3okriUVHktecxfzzdzX7cuma4wMFUXntU*
 
                       Tx: *th_2F1SLzAAKGYhbA52NfvX3XCVnTYjewgKeoXdFQawMKA1ScmQ2g*
                       """}

@@ -30,7 +30,7 @@ defmodule Web.Plugs.TGBotTest do
     assert_receive {:message,
                     telegram_id: 123,
                     text: """
-                    /shaere <amount> <address> to share some AE
+                    /shaere <amount> <address> to share some Æ
 
                     /key to get your private key
 

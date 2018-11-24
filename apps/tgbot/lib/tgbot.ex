@@ -61,10 +61,11 @@ defmodule TGBot do
               """
               👍
 
-              Sent #{amount} AE from @#{sender_username} to @#{receiver_username}
+              Sent *#{amount} Æ* from @#{sender_username} to @#{receiver_username}
 
               Tx: *#{th}*
-              """
+              """,
+              parse_mode: "Markdown"
             )
 
             # TODO error case
@@ -91,10 +92,11 @@ defmodule TGBot do
                   """
                   👍
 
-                  Sent #{amount} AE from @#{sender_username} to *#{address}*
+                  Sent *#{amount} Æ* from @#{sender_username} to *#{address}*
 
                   Tx: *#{th}*
-                  """
+                  """,
+                  parse_mode: "Markdown"
                 )
 
                 # TODO error case
@@ -121,8 +123,12 @@ defmodule TGBot do
     """)
   end
 
+  defp handle_public(_other, _message) do
+    :ignore
+  end
+
   @private_help_msg """
-  /shaere <amount> <address> to share some AE
+  /shaere <amount> <address> to share some Æ
 
   /key to get your private key
 
@@ -158,10 +164,11 @@ defmodule TGBot do
                   """
                   👍
 
-                  Sent #{amount} AE to *#{address}*
+                  Sent *#{amount} Æ* to *#{address}*
 
                   Tx: *#{th}*
-                  """
+                  """,
+                  parse_mode: "Markdown"
                 )
 
                 # TODO error case
@@ -189,7 +196,7 @@ defmodule TGBot do
     @adapter.send_message(
       chat_id,
       """
-      Your balance is *#{balance} AE.*
+      Your balance is *#{balance} Æ.*
 
       Try to keep the funds here to a minimum. Think of it like pocket change.
       """,
