@@ -1,8 +1,8 @@
 <section class="pa5-ns pa2">
-  <article class="measure sans-serif">
+  <article class="measure sans-serif lh-copy">
     <p class="pa2 purple white pa2 bg-washed-red"><b>alice:</b> hi, bob, you won't believe what I've just found out about!</p>
     <p class="dark-blue pa2 bg-lightest-blue"><b>bob:</b> omg alice what is it!?</p>
-    <p class="purple pa2 bg-washed-red"><b>alice:</b> it's a bot, <a class="link dark-green" href="https://t.me/shaerebot">@shaerebot</a>. I'm not quite sure how it works, but someone sent me some cryptocurrency via it and I just received it, without ever registering anywhere.</p>
+    <p class="purple pa2 bg-washed-red lh-copy"><b>alice:</b> it's a bot, <a class="link dark-green" href="https://t.me/shaerebot">@shaerebot</a>. I'm not quite sure how it works, but someone sent me some cryptocurrency via it and I just received it, without ever registering anywhere.</p>
     <p class="dark-blue pa2 bg-lightest-blue"><b>bob:</b> omg, i mean, yeah</p>
     <p class="purple pa2 bg-washed-red"><b>alice:</b> they just wrote <span class="code orange f6">/shaere 100</span> in a reply to my message</p>
     <p class="dark-blue pa2 bg-lightest-blue"><b>bob:</b> does it mean you can share some of it with me?</p>
