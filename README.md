@@ -4,7 +4,17 @@
 
 `:shaere` allows your existing users "shære" Æ with each other without any additional software (for the end-user, that is).
 
-All you need to do is implement a callback module for `:shaere` to bind your user ids with private keys for the Æternity blockchain.
+Just pluck your list of dependencies in `mix.exs`:
+
+```elixir
+def deps do
+  [
+    {:shaere, github: "spawnfest/shaere"}
+  ]
+end
+```
+
+And implement a callback module for `:shaere` to bind your user ids with private keys for the Æternity blockchain:
 
 ```elixir
 defmodule MyApp.ShaereStorage do
