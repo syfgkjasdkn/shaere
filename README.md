@@ -35,8 +35,8 @@ Don't forget to let `:shaere` know about your storage module by using `Shaere.se
 # somewhere in your app startup phase
 :ok = Shaere.set_storage_adapter(MyApp.ShaereStorage)
 
-# you can change it later at runtime if you need to by calling
-# the same command but with a different module
+# you can change it later at runtime if you need to 
+# by calling the same command but with a different module
 ```
 
 After that you can
