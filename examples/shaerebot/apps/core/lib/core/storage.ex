@@ -2,6 +2,8 @@ defmodule Core.Storage do
   @moduledoc false
   use GenServer
 
+  @behaviour Shaere.StorageAdapterType
+
   @doc false
   def start_link(opts) do
     GenServer.start_link(__MODULE__, opts, name: __MODULE__)
@@ -14,6 +16,7 @@ defmodule Core.Storage do
   end
 
   # TODO
+  @impl Shaere.StorageAdapterType
   def privkey(telegram_id) do
     GenServer.call(__MODULE__, {:privkey, telegram_id})
   end
@@ -37,7 +40,8 @@ defmodule Core.Storage do
       if privkey = lookup(telegram_id) do
         privkey
       else
-        privkey = Ae.keypair().secret
+        # TODO
+        privkey = Shaere.Ae.keypair().secret
         true = :ets.insert(__MODULE__, {telegram_id, privkey})
         privkey
       end

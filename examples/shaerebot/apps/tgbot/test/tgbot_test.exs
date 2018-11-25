@@ -39,7 +39,7 @@ defmodule TGBotTest do
                       receiver: "ak_2okXACqGyq8JMLYgj3okriUVHktecxfzzdzX7cuma4wMFUXntU",
                       amount: 100}
 
-      assert sender_privkey == Core.privkey(telegram_id)
+      assert sender_privkey == Shaere.privkey(telegram_id)
 
       assert_receive {:message,
                       telegram_id: ^telegram_id,
@@ -56,8 +56,8 @@ defmodule TGBotTest do
 
       assert_receive {:shaere, sender_privkey: sender_privkey, receiver: receiver, amount: 105}
 
-      assert sender_privkey == Core.privkey(telegram_id)
-      assert receiver == Core.address(1234)
+      assert sender_privkey == Shaere.privkey(telegram_id)
+      assert receiver == Shaere.address(1234)
 
       assert_receive {:message,
                       telegram_id: ^telegram_id,
@@ -110,8 +110,8 @@ defmodule TGBotTest do
       empty_telegram_id = 124
       telegram_id = 125
 
-      assert 0 == Core.balance(empty_telegram_id)
-      assert 1000 == Core.balance(telegram_id)
+      assert 0 == Shaere.balance(empty_telegram_id)
+      assert 1000 == Shaere.balance(telegram_id)
 
       send_private_message(empty_telegram_id, "/balance")
 
@@ -139,7 +139,7 @@ defmodule TGBotTest do
 
       send_private_message(telegram_id, "/key")
 
-      privkey = Core.privkey(telegram_id)
+      privkey = Shaere.privkey(telegram_id)
 
       privkey_base16 = Base.encode16(privkey, case: :lower)
 
@@ -155,7 +155,7 @@ defmodule TGBotTest do
 
       send_private_message(telegram_id, "/address")
 
-      address = Core.address(telegram_id)
+      address = Shaere.address(telegram_id)
 
       assert_receive {:message, telegram_id: ^telegram_id, text: text}
 
@@ -177,7 +177,7 @@ defmodule TGBotTest do
                       receiver: "ak_2okXACqGyq8JMLYgj3okriUVHktecxfzzdzX7cuma4wMFUXntU",
                       amount: 123}
 
-      assert sender_privkey == Core.privkey(telegram_id)
+      assert sender_privkey == Shaere.privkey(telegram_id)
 
       assert_receive {:message,
                       telegram_id: ^telegram_id,
@@ -217,7 +217,7 @@ defmodule TGBotTest do
                         """
                       ]}
 
-      assert address == Core.address(telegram_id)
+      assert address == Shaere.address(telegram_id)
     end
 
     test "invalid shaere"

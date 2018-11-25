@@ -40,13 +40,12 @@ environment :prod do
   )
 end
 
-release :shaere do
+release :shaerebot do
   set(version: "0.1.0")
 
   set(
     applications: [
       :runtime_tools,
-      ae: :permanent,
       core: :permanent,
       tgbot: :permanent,
       web: :permanent

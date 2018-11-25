@@ -1,3 +1,3 @@
 use Mix.Config
 
-config :core, adapter: Core.TestAdapter
+config :shaere, ae_adapter: Shaere.TestAeAdapter

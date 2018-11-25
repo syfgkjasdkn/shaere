@@ -54,7 +54,7 @@ defmodule TGBot do
        }) do
     case Integer.parse(amount) do
       {amount, _rest} ->
-        case Core.shaere(sender_id, receiver_id, amount) do
+        case Shaere.shaere(sender_id, receiver_id, amount) do
           {:ok, th} ->
             @adapter.send_message(
               chat_id,
@@ -83,7 +83,7 @@ defmodule TGBot do
         case Integer.parse(amount) do
           # TODO validate address
           {amount, _rest} ->
-            case Core.shaere(sender_id, address, amount) do
+            case Shaere.shaere(sender_id, address, amount) do
               {:ok, th} ->
                 @adapter.send_message(
                   chat_id,
@@ -153,7 +153,7 @@ defmodule TGBot do
         case Integer.parse(amount) do
           # TODO validate address
           {amount, _rest} ->
-            case Core.shaere(chat_id, address, amount) do
+            case Shaere.shaere(chat_id, address, amount) do
               {:ok, th} ->
                 @adapter.send_message(
                   chat_id,
@@ -185,7 +185,7 @@ defmodule TGBot do
   end
 
   defp handle_private("/balance" <> _maybe_whitespace, %{"chat" => %{"id" => chat_id}}) do
-    balance = Core.balance(chat_id)
+    balance = Shaere.balance(chat_id)
 
     @adapter.send_message(
       chat_id,
@@ -199,7 +199,7 @@ defmodule TGBot do
   end
 
   defp handle_private("/key" <> _maybe_whitespace, %{"chat" => %{"id" => chat_id}}) do
-    privkey = Core.privkey(chat_id)
+    privkey = Shaere.privkey(chat_id)
 
     @adapter.send_message(
       chat_id,
@@ -211,7 +211,7 @@ defmodule TGBot do
   end
 
   defp handle_private("/address" <> _maybe_whitespace, %{"chat" => %{"id" => chat_id}}) do
-    address = Core.address(chat_id)
+    address = Shaere.address(chat_id)
 
     @adapter.send_message(
       chat_id,
@@ -223,7 +223,7 @@ defmodule TGBot do
   end
 
   defp handle_private("/start" <> _maybe_whitespace, %{"chat" => %{"id" => chat_id}}) do
-    address = Core.address(chat_id)
+    address = Shaere.address(chat_id)
 
     private_start_msg = [
       """

@@ -7,6 +7,8 @@ defmodule Core.Application do
       Core.Storage
     ]
 
+    :ok = Shaere.set_storage_adapter(Core.Storage)
+
     opts = [strategy: :one_for_one, name: Core.Supervisor]
     Supervisor.start_link(children, opts)
   end

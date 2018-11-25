@@ -31,7 +31,7 @@ defmodule Core.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:ae, in_umbrella: true},
+      {:shaere, path: "../../../.."},
       {:rexbug, "~> 1.0"}
     ]
   end
