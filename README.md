@@ -12,7 +12,7 @@
 
 ---
 
-It's a bad pun, and it's also a good little library that allows your existing users "shære" [Æ](https://coinmarketcap.com/currencies/aeternity/) with each other without any additional software. No additional software for the end-user, that is, you'd still need to install and setup `:shaere`, but don't worry, it's real easy.
+It's a bad pun, and it's also a good little library that allows your existing users "shære" [Æ](https://coinmarketcap.com/currencies/aeternity/) with each other without any additional software. No additional software for the end-user, that is. You'd still need to install and setup `:shaere`, but don't worry, it's real easy.
 
 Just plonk `shaere` into your list of dependencies in `mix.exs`:
 
@@ -20,7 +20,7 @@ Just plonk `shaere` into your list of dependencies in `mix.exs`:
 def deps do
   [
     # ... deps ...
-    # I usually order the deps in the order of usefullness
+    # I usually order the deps by their usefullness
     # ... deps ...
     {:shaere, github: "spawnfest/shaere"}
   ]
