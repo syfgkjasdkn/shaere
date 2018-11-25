@@ -72,6 +72,6 @@ To learn your address in, for example, [@shaerebot](https://t.me/shaerebot) (whi
 
 #### Examples
 
-There are two example projects (see [/examples](https://github.com/spawnfest/shaere/tree/master/examples)) which illustrate this idea, be sure to check them out!
+There are two example projects (see [/examples](https://github.com/spawnfest/shaere/tree/master/examples)) which illustrate this idea, be sure to check them out! Please ...
 
 I spent more time on them than on the actual library ...
