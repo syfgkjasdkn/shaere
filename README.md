@@ -8,7 +8,7 @@
 
 ---
 
-### OMG, WHAT IS SHÆRE
+### OMG WHAT IS SHÆRE
 
 It's a bad pun, and it's also a little library that allows your existing users "shære" [Æ](https://coinmarketcap.com/currencies/aeternity/) with each other without any additional software. For the end-user, that is, you'd still need to install `:shaere`, but don't worry, it's real easy.
 
