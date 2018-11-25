@@ -8,4 +8,8 @@ All you need to do is implement a callback module for `:shaere` to bind your use
 
 ---
 
+Since this project is using Æternity's testnet, you can top the account that `:shaere` creates for you in https://faucet.aepps.com/ by pasting your address. To learn your address in, for example, [@shaerebot](https://t.me/shaerebot), ask the bot for your address with `/address` command in a private chat.
+
+---
+
 There are two example projects (see [/examples](https://github.com/spawnfest/shaere/tree/master/examples)) which illustrate this idea, be sure to check them out! I spent more time on them than on the actual library ...
