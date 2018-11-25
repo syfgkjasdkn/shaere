@@ -19,6 +19,9 @@ Just plonk `shaere` into your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
+    # ... deps ...
+    # I usually order the deps in the order of usefullness
+    # ... deps ...
     {:shaere, github: "spawnfest/shaere"}
   ]
 end
