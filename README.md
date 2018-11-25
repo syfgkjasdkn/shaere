@@ -42,9 +42,11 @@ defmodule MyApp.ShaereStorage do
 
   @impl Shaere.StorageAdapterType
   def privkey(user_id) do
-    # it works best if the operation is isolated
+    # it works best if the operation is "isolated"
     # to avoid creating multiple keys for the same user
+    # like `BEGIN ISOLATION LEVEL SERIALIZABLE;` in postgres
     # https://www.postgresql.org/docs/current/transaction-iso.html#XACT-SERIALIZABLE
+    # or an ets table behind a genserver or sqlite with a single writer (default)
     in_some_isolated_db_transaction(fn ->
       # get a private key from a database
       if privkey = Database.privkey(user_id: user_id) do
