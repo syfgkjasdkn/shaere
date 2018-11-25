@@ -8,9 +8,9 @@
 
 ---
 
-### OMG, WHAT IS `:shaere`
+### OMG, WHAT IS SHAERE
 
-`:shaere` is a little library that allows your existing users "shære" Æ with each other without any additional software. For the end-user, that is, you'd still need to install `:shaere`, but don't worry, it's real easy.
+It's a bad pun, and it's also a little library that allows your existing users "shære" Æ with each other without any additional software. For the end-user, that is, you'd still need to install `:shaere`, but don't worry, it's real easy.
 
 All you need to do is implement a callback module for `:shaere` to bind your user ids with private keys for the Æternity blockchain.
 
