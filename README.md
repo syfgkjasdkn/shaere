@@ -105,7 +105,7 @@ when it responds to the `/balance` command.
 
 There are some improvements possible though. (TODO this section might get outdated)
 
-- allow having an additional address to where all funds (or some %) are redirected
+- allow having an additional address to where all funds (or some %) are redirected, the private key to which the user stores safely in a cold storage
 - encrypt the private key with a passphrase, the user would need to supply it every time they interact with the private key, for example, when "shaering"
 - maybe implement the current functionality with a smart contract and an oracle, if that's at all possible
 
