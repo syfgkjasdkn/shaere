@@ -29,6 +29,26 @@ defmodule MyApp.ShaereStorage do
 end
 ```
 
+Don't forget to let `:shaere` know about your storage module by using `Shaere.set_storage_adapter(module)`
+
+```elixir
+# somewhere in your app startup phase
+:ok = Shaere.set_storage_adapter(MyApp.ShaereStorage)
+```
+
+After that you can
+
+```elixir
+# get the address of a user on the blockchain
+Shaere.address(user_id) # => "ak_uBXfaCX5uYVMaePtS2ybXv4nahu8ALfmGcsgge9ghrfAHD6Wf"
+
+# get the balance of a user on the blockchain
+Shaere.balance(user_id) # => 5000
+
+# send tokens from one user to another
+Shaere.shaere(sender_user_id, receiver_user_id, amount) # => {:ok, "th_2A9PibNnDbNDNJ78ZQxMdfXAPP8dZ1XnhiZpJBJSy4aefixtDr"}
+```
+
 ---
 
 #### Getting (fake) tokens
