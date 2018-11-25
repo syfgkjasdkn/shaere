@@ -3,7 +3,7 @@ defmodule Shaere do
   alias Shaere.Ae
 
   # this is for setting a testing adapter in tests
-  @ae_adapter Application.get_env(:shaere, :ae_adapter) || raise("need shaere.ae_adapter")
+  @ae_adapter Application.get_env(:shaere, :ae_adapter, Shaere.AeAdapter)
 
   @type user_id :: any
 
