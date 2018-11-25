@@ -8,7 +8,7 @@ All you need to do is implement a callback module for `:shaere` to bind your use
 
 ---
 
-#### Getting tokens
+#### Getting (fake) tokens
 
 Since this project is using Æternity's testnet, you can top the account that `:shaere` creates for you in https://faucet.aepps.com/ by pasting your address there.
 
