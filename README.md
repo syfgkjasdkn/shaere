@@ -66,7 +66,7 @@ Shaere.shaere(sender_user_id, receiver_user_id, amount) # => {:ok, "th_2A9PibNnD
 
 Since this project is using Æternity's testnet, you can top the account that `:shaere` creates for you in https://faucet.aepps.com/ by pasting your address there.
 
-To learn your address in, for example, [@shaerebot](https://t.me/shaerebot), send the bot `/address` command in a private chat.
+To learn your address in, for example, [@shaerebot](https://t.me/shaerebot) (which is one of the example procjets, see the next section), send the bot `/address` command in a private chat.
 
 ---
 
