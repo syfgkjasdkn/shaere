@@ -95,7 +95,7 @@ Shaere.shaere(sender_user_id, receiver_user_id, amount) # => {:ok, "th_2A9PibNnD
 
 #### Security
 
-Secure it is not. You are storing private keys somewhere in a database, probably in plaintext!
+Secure it is not. You are (I am) storing private keys somewhere in a database, probably in plaintext!!1 Of course it's not secure. Of course!
 
 But who cares? It's convinient.
 
