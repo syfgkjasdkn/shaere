@@ -1,5 +1,5 @@
 use Mix.Releases.Config,
-  default_release: :shaere,
+  default_release: :shaerebot,
   default_environment: Mix.env()
 
 environment :dev do

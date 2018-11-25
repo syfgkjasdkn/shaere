@@ -1,21 +1,21 @@
-<section class="pa5">
+<section class="pa5-ns pa2">
   <article class="measure sans-serif">
-    <p class="dark-pink"><b>alice:</b> hi, bob, you won't believe what I've just found out about!</p>
-    <p class="dark-blue"><b>bob:</b> omg alice what is it!?</p>
-    <p class="dark-pink"><b>alice:</b> it's a bot, <a class="link" href="https://t.me/shaerebot">@shaerebot</a>. I'm not quite sure how it works, but someone sent me some cryptocurrency via it and I just received it, without ever registering anywhere.</p>
-    <p class="dark-blue"><b>bob:</b> omg, i mean, yeah</p>
-    <p class="dark-pink"><b>alice:</b> they just wrote <span class="code orange f6">/shaere 100</span> in a reply to my message</p>
-    <p class="dark-blue"><b>bob:</b> does it mean you can share some of it with me?</p>
-    <p>
-      <blockquote class="dark-blue"><b>bob:</b> does it mean you can share some of it with me?</blockquote>
-      <b class="dark-pink">alice:</b> <span class="code orange f6">/shaere 66</span>
-    </p>
-    <p class="dark-green"><b>shaerebot:</b> sent 66 Æ to @bob</p>
-    <p class="dark-pink"><b>alice:</b> omg</p>
-    <p class="dark-blue"><b>bob:</b> yolo, omg</p>
+    <p class="pa2 purple white pa2 bg-washed-red"><b>alice:</b> hi, bob, you won't believe what I've just found out about!</p>
+    <p class="dark-blue pa2 bg-lightest-blue"><b>bob:</b> omg alice what is it!?</p>
+    <p class="purple pa2 bg-washed-red"><b>alice:</b> it's a bot, <a class="link dark-green" href="https://t.me/shaerebot">@shaerebot</a>. I'm not quite sure how it works, but someone sent me some cryptocurrency via it and I just received it, without ever registering anywhere.</p>
+    <p class="dark-blue pa2 bg-lightest-blue"><b>bob:</b> omg, i mean, yeah</p>
+    <p class="purple pa2 bg-washed-red"><b>alice:</b> they just wrote <span class="code orange f6">/shaere 100</span> in a reply to my message</p>
+    <p class="dark-blue pa2 bg-lightest-blue"><b>bob:</b> does it mean you can share some of it with me?</p>
+    <div class="bg-washed-red pt2">
+      <blockquote class="dark-blue bg-lightest-blue bl b--dark-blue bw2 pa2"><b>bob:</b> does it mean you can share some of it with me?</blockquote>
+      <p class="purple pa2 bg-washed-red"><b>alice:</b> <span class="code orange f6">/shaere 66</span></p>
+    </div>
+    <p class="dark-green pa2 bg-light-green"><b>shaerebot:</b> sent 66 Æ to @bob</p>
+    <p class="purple pa2 bg-washed-red"><b>alice:</b> omg</p>
+    <p class="dark-blue pa2 bg-lightest-blue"><b>bob:</b> yolo, omg</p>
   </article>
 </section>
 
-<section class="pa5 tc i sans-serif gray">
+<section class="pa2 mb4 tc i sans-serif gray">
   <p>Expirience this for yourself with <a class="link" href="https://t.me/shaerebot">@shaerebot</a> today!</p>
 </section>
