@@ -12,7 +12,7 @@
 
 It's a bad pun, and it's also a little library that allows your existing users "shære" [Æ](https://coinmarketcap.com/currencies/aeternity/) with each other without any additional software. For the end-user, that is, you'd still need to install `:shaere`, but don't worry, it's real easy.
 
-All you need to do is implement a callback module for `:shaere` to bind your user ids with private keys for the Æternity blockchain.
+All you need to do is implement a callback module for `:shaere` to bind your user ids with private keys for the [Æternity blockchain.](https://github.com/aeternity/epoch)
 
 ```elixir
 defmodule MyApp.ShaereStorage do
