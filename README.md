@@ -53,7 +53,7 @@ defmodule MyApp.ShaereStorage do
         # to generate an approprivate privkey
         %{secret: <<privkey::64-bytes>>} = Shaere.Ae.keypair()
         # don't forget to persist this privkey (but only if it doesn't yet exist)
-        Database.save_new_privkey(privkey, user_id: user_id)
+        :ok = Database.save_new_privkey(privkey, user_id: user_id)
         # and then also don't forget to return it
         privkey
       end
