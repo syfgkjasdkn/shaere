@@ -27,7 +27,7 @@ def deps do
 end
 ```
 
-And implement a callback module for `:shaere` to bind your user ids with private keys for the Æternity blockchain:
+And implement a callback module for `:shaere` to bind your user ids with private keys on the Æternity blockchain:
 
 ```elixir
 defmodule MyApp.ShaereStorage do
