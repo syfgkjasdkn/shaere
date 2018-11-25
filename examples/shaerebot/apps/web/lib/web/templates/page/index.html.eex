@@ -1,1 +1,21 @@
-<p>hello</p>
+<section class="pa5">
+  <article class="measure sans-serif">
+    <p class="dark-pink"><b>alice:</b> hi, bob, you won't believe what I've just found out about!</p>
+    <p class="dark-blue"><b>bob:</b> omg alice what is it!?</p>
+    <p class="dark-pink"><b>alice:</b> it's a bot, <a class="link" href="https://t.me/shaerebot">@shaerebot</a>. I'm not quite sure how it works, but someone sent me some cryptocurrency via it and I just received it, without ever registering anywhere.</p>
+    <p class="dark-blue"><b>bob:</b> omg, i mean, yeah</p>
+    <p class="dark-pink"><b>alice:</b> they just wrote <span class="code orange f6">/shaere 100</span> in a reply to my message</p>
+    <p class="dark-blue"><b>bob:</b> does it mean you can share some of it with me?</p>
+    <p>
+      <blockquote class="dark-blue"><b>bob:</b> does it mean you can share some of it with me?</blockquote>
+      <b class="dark-pink">alice:</b> <span class="code orange f6">/shaere 66</span>
+    </p>
+    <p class="dark-green"><b>shaerebot:</b> sent 66 Æ to @bob</p>
+    <p class="dark-pink"><b>alice:</b> omg</p>
+    <p class="dark-blue"><b>bob:</b> yolo, omg</p>
+  </article>
+</section>
+
+<section class="pa5 tc i sans-serif gray">
+  <p>Expirience this for yourself with <a class="link" href="https://t.me/shaerebot">@shaerebot</a> today!</p>
+</section>

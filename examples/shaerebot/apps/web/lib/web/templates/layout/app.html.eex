@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
   </head>
   <body>
-    <main role="main" class="debug debug-grid">
+    <main role="main">
       <%= render(@view_module, @view_template, assigns) %>
     </main>
   </body>
