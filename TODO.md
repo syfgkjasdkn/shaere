@@ -13,3 +13,4 @@
 - [ ] wait for the transactions to be committed to the blockchain?
 - [ ] fix command parsing in the bot
 - [ ] add a website to the bot
+- [ ] make httpc verify https or use something else
