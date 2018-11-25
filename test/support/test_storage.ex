@@ -9,7 +9,7 @@ defmodule Shaere.TestStorage do
     GenServer.start_link(__MODULE__, opts, name: __MODULE__)
   end
 
-  @doc false
+  @impl GenServer
   def init(_opts) do
     __MODULE__ = :ets.new(__MODULE__, [:named_table])
     {:ok, []}
@@ -34,7 +34,7 @@ defmodule Shaere.TestStorage do
     end
   end
 
-  @doc false
+  @impl GenServer
   def handle_call({:privkey, telegram_id}, _from, state) do
     privkey =
       if privkey = lookup(telegram_id) do
