@@ -5,4 +5,7 @@
 - [ ] allow /shaere 100 @username in the bot
 - [ ] allow setting a different address in the bot (to redirect funds)
 - [ ] allow inline queries in the bot like @shaerebot 100 ak_asdjhfg
-
+- [ ] fix ci
+- [ ] fix dialyzer warnings
+- [ ] fix TODOs
+- [ ] more docs
