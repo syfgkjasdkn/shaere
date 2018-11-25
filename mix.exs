@@ -15,7 +15,8 @@ defmodule Shaere.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger]
+      # TODO remove inets if we switch to httpoison
+      extra_applications: [:inets, :logger]
     ]
   end
 
