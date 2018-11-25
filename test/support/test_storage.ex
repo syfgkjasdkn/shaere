@@ -2,6 +2,8 @@ defmodule Shaere.TestStorage do
   @moduledoc false
   use GenServer
 
+  @behaviour Shaere.StorageAdapterType
+
   @doc false
   def start_link(opts) do
     GenServer.start_link(__MODULE__, opts, name: __MODULE__)
@@ -14,6 +16,7 @@ defmodule Shaere.TestStorage do
   end
 
   # TODO
+  @impl Shaere.StorageAdapterType
   def privkey(telegram_id) do
     GenServer.call(__MODULE__, {:privkey, telegram_id})
   end
