@@ -8,7 +8,7 @@ All you need to do is implement a callback module for `:shaere` to bind your use
 
 ---
 
-Since this project is using Æternity's testnet, you can top the account that `:shaere` creates for you in https://faucet.aepps.com/ by pasting your address. To learn your address in, for example, [@shaerebot](https://t.me/shaerebot), ask the bot for your address with `/address` command in a private chat.
+Since this project is using Æternity's testnet, you can top the account that `:shaere` creates for you in https://faucet.aepps.com/ by pasting your address there. To learn your address in, for example, [@shaerebot](https://t.me/shaerebot), send the bot `/address` command in a private chat.
 
 ---
 
