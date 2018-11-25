@@ -34,6 +34,8 @@ Don't forget to let `:shaere` know about your storage module by using `Shaere.se
 ```elixir
 # somewhere in your app startup phase
 :ok = Shaere.set_storage_adapter(MyApp.ShaereStorage)
+
+# you can change it later at runtime if you need to
 ```
 
 After that you can
