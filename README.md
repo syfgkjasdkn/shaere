@@ -1,5 +1,7 @@
 ### shære
 
+---
+
 `:shaere` allows your existing users "shære" Æ with each other without any additional software (for the end-user, that is).
 
 All you need to do is implement a callback module for `:shaere` to bind your user ids with private keys for the Æternity blockchain.
