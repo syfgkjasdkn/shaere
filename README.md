@@ -21,7 +21,8 @@ def deps do
   [
     # ... deps ...
     # I usually order the deps by their usefullness
-    # ... deps ...
+    # .. deps ....
+    # .... deps ..
     {:shaere, github: "spawnfest/shaere"}
   ]
 end
