@@ -1,5 +1,3 @@
-- [ ] extract :shaere into a library
-- [ ] move the bot into /examples
 - [ ] add a website with the same functionality (emulating a twitch stream)
 - [ ] show two example callbacks for :shaere to bind user ids to keys, ets table and sqlite
 - [ ] allow /shaere 100 @username in the bot
