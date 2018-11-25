@@ -8,4 +8,4 @@ These two projects illustrate the main idea behind `:shaere` (easy Æ sharing) a
 
 ### shaeritch
 
-[shaeritch](https://shaeritch.from.network) is a twitch emulator which shows how your existing users can send and receive (aka shaere) Æ without hassle.
+[shaeritch](https://shaeritch.from.network) is (going to be) a twitch emulator which shows how your existing users can send and receive (aka shaere) Æ without hassle.
