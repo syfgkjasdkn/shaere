@@ -42,10 +42,22 @@ defmodule MyApp.ShaereStorage do
 
   @impl Shaere.StorageAdapterType
   def privkey(user_id) do
-    # get a private key from a database
-    # if it doesn't yet exist, use `Shaere.Ae.keypair().secret`
-    # to create a keypair and pick the secret part, store it in your database
-    # and then return here
+    # it works best if the operation is atomic
+    # to avoid creating multiple keys for the same user
+    in_db_transaction(fn ->
+      # get a private key from a database
+      if privkey = Database.privkey(user_id: user_id) do
+        privkey
+      else
+        # if it doesn't yet exist, you can use `Shaere.Ae.keypair()`
+        # to generate an approprivate privkey
+        %{secret: <<privkey::64-bytes>>} = Shaere.Ae.keypair()
+        # don't forget to persist this privkey
+        Database.save_privkey(privkey, user_id: user_id)
+        # and then also don't forget to return it
+        privkey
+      end
+    end)
   end
   
   # ...
