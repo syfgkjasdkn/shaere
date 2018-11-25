@@ -16,7 +16,8 @@ defmodule Shaere.MixProject do
   # Run "mix help deps" for examples and options.
   defp deps do
     [
-      {:dialyxir, "~> 1.0-rc", only: [:dev], runtime: false}
+      {:dialyxir, "~> 1.0-rc", only: [:dev], runtime: false},
+      {:distillery, "~> 2.0", runtime: false}
     ]
   end
 end
