@@ -14,7 +14,7 @@
 
 It's a bad pun, and it's also a good little library that allows your existing users "shære" [Æ](https://coinmarketcap.com/currencies/aeternity/) with each other without any additional software. No additional software for the end-user, that is, you'd still need to install and setup `:shaere`, but don't worry, it's real easy.
 
-Just pluck your list of dependencies in `mix.exs`:
+Just plonk `shaere` into your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
