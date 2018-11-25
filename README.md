@@ -130,3 +130,7 @@ I spent more time on them than on the actual library ...
 #### I see a makefile
 
 Yep. It can `make setup` and `make check`.
+
+---
+
+`shære is cære. bye!`
