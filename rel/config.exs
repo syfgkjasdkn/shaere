@@ -27,9 +27,9 @@ environment :prod do
 
   set(
     overlays: [
-      {:copy, "rel/etc/shaere.service", "etc/shaere.service"},
+      {:copy, "rel/etc/shaerebot.service", "etc/shaerebot.service"},
       {:copy, "rel/etc/config.exs", "etc/config.exs"}
-      # {:link, "rel/etc/shaere.service", "/etc/systemd/system/shaere.service"}
+      # {:link, "rel/etc/shaerebot.service", "/etc/systemd/system/shaerebot.service"}
     ]
   )
 

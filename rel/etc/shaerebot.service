@@ -11,7 +11,7 @@ RestartSec=5
 Environment=WEB_PORT=5050
 Environment=WEB_SECRET_KEY_BASE=not_important_right_now
 WorkingDirectory=/home/shaerebot/shaerebot
-ExecStart=/home/shaerebot/shaerebot/bin/shaerebot foreground
+ExecStart=/home/shaerebot/shaerebot/bin/shaere foreground
 RemainAfterExit=no
 TimeoutStopSec=60
 KillMode=process
