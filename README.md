@@ -1,6 +1,14 @@
-### shære
+*Tired of Stripe discriminating against your country?*
+
+*Tired of PayPal not answering your support tickets?*
+
+*Feeling adventurous? Like, **really really** adventurous?*
+
+*Try `:shaere` today!*
 
 ---
+
+### shære
 
 `:shaere` allows your existing users "shære" Æ with each other without any additional software (for the end-user, that is).
 
