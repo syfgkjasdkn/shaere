@@ -44,6 +44,7 @@ defmodule MyApp.ShaereStorage do
   def privkey(user_id) do
     # it works best if the operation is isolated
     # to avoid creating multiple keys for the same user
+    # https://www.postgresql.org/docs/current/transaction-iso.html#XACT-SERIALIZABLE
     in_some_isolated_db_transaction(fn ->
       # get a private key from a database
       if privkey = Database.privkey(user_id: user_id) do
