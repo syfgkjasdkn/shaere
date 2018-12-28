@@ -1,3 +1,8 @@
+
+🚨 **ALL DEVELOPMENT MOVED TO [SHAERE/BOT](https://github.com/shaere/bot)** 🚨
+
+---
+
 *Tired of Stripe discriminating against your country?*
 
 *Tired of PayPal not answering your support tickets?*
